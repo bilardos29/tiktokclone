@@ -13,11 +13,32 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: PageView(
-          scrollDirection: Axis.vertical,
+      scrollDirection: Axis.vertical,
       children: const [
-        PostView(colors: Colors.redAccent),
-        PostView(colors: Colors.yellowAccent),
-        PostView(colors: Colors.blueAccent),
+        PostView(
+          username: 'Pet World',
+          description: 'Funny pet playing outside',
+          tag: '#fyp #viral #pet',
+          likeNumber: '1.2M',
+          commentNumber: '1234',
+          bookmarkNumber: '12.5K',
+        ),
+        PostView(
+          username: 'Secret Keyword',
+          description: 'Secret message for 1% people',
+          tag: '#fyp #viral #message',
+          likeNumber: '1.2M',
+          commentNumber: '1234',
+          bookmarkNumber: '12.5K',
+        ),
+        PostView(
+          username: 'Nationality',
+          description: 'Sun will be collapse',
+          tag: '#fyp #viral #nationality',
+          likeNumber: '1.0M',
+          commentNumber: '1234',
+          bookmarkNumber: '12.5K',
+        ),
       ],
     ));
   }

@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:tiktokcloneapp/screen/home/view/profile_widget.dart';
 
 import 'button_post_widget.dart';
 
 class PostView extends StatelessWidget {
-  final Color colors;
+  final String username;
+  final String description;
+  final String tag;
+  final String likeNumber;
+  final String commentNumber;
+  final String bookmarkNumber;
 
-  const PostView({required this.colors, Key? key}) : super(key: key);
+  const PostView(
+      {required this.username,
+      required this.description,
+      required this.tag,
+      required this.likeNumber,
+      required this.commentNumber,
+      required this.bookmarkNumber,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,46 +37,54 @@ class PostView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Pet World",
-                  style: TextStyle(
+                Text(
+                  username,
+                  style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 16),
                 ),
                 RichText(
-                    text: const TextSpan(children: [
-                  TextSpan(
-                      text: "showing pet in the world",
-                      style: TextStyle(color: Colors.white)),
-                  TextSpan(
-                      text: "#fyp #pet #viral",
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold))
-                ]))
+                    text: TextSpan(
+                        style: const TextStyle(color: Colors.white),
+                        children: [
+                      TextSpan(text: description),
+                      TextSpan(
+                          text: tag,
+                          style: const TextStyle(fontWeight: FontWeight.bold))
+                    ]))
               ],
             ),
           ),
           Container(
-            alignment: Alignment(1, 1),
-            padding: EdgeInsets.all(20),
-            child: const Column(
+            alignment: const Alignment(1, 1),
+            padding: const EdgeInsets.all(20),
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                const ProfileWidget(
+                  imgProfile: 'profile_sample.png',
+                ),
+                const SizedBox(height: 12),
                 ButtonPostWidget(
                   icons: Icons.favorite,
-                  number: '1.2M',
+                  number: likeNumber,
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 12),
                 ButtonPostWidget(
-                  icons: Icons.chat_bubble,
-                  number: '12.5M',
+                  imgIcon: 'ic_comment.png',
+                  number: commentNumber,
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 12),
                 ButtonPostWidget(
-                  icons: Icons.send,
-                  number: '12K',
+                  icons: Icons.bookmark,
+                  number: bookmarkNumber,
+                ),
+                const SizedBox(height: 12),
+                const ButtonPostWidget(
+                  imgIcon: 'ic_share.png',
+                  number: 'Share',
                 ),
               ],
             ),
