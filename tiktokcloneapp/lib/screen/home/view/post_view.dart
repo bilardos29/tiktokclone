@@ -10,6 +10,7 @@ class PostView extends StatelessWidget {
   final String likeNumber;
   final String commentNumber;
   final String bookmarkNumber;
+  final String shareNumber;
 
   const PostView(
       {required this.username,
@@ -18,6 +19,7 @@ class PostView extends StatelessWidget {
       required this.likeNumber,
       required this.commentNumber,
       required this.bookmarkNumber,
+      required this.shareNumber,
       Key? key})
       : super(key: key);
 
@@ -82,9 +84,9 @@ class PostView extends StatelessWidget {
                   number: bookmarkNumber,
                 ),
                 const SizedBox(height: 12),
-                const ButtonPostWidget(
+                ButtonPostWidget(
                   imgIcon: 'ic_share.png',
-                  number: 'Share',
+                  number: shareNumber,
                 ),
               ],
             ),

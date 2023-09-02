@@ -15,7 +15,7 @@ class ProfileWidget extends StatelessWidget {
         Container(
           width: 40,
           height: 40,
-          margin: const EdgeInsets.only(bottom: 6),
+          margin: const EdgeInsets.only(bottom: 8),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32),
               border: Border.all(color: Colors.white, width: 2),
@@ -30,7 +30,7 @@ class ProfileWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 2, color: Colors.red)),
+                    border: Border.all(width: 6, color: Colors.red)),
                 child: Image.asset(
                   'images/ic_add2.png',
                   color: Colors.white,

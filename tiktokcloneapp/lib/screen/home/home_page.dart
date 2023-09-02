@@ -22,6 +22,7 @@ class _HomePageState extends State<HomePage> {
           likeNumber: '1.2M',
           commentNumber: '1234',
           bookmarkNumber: '12.5K',
+          shareNumber: '111',
         ),
         PostView(
           username: 'Secret Keyword',
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> {
           likeNumber: '1.2M',
           commentNumber: '1234',
           bookmarkNumber: '12.5K',
+          shareNumber: '113',
         ),
         PostView(
           username: 'Nationality',
@@ -38,6 +40,7 @@ class _HomePageState extends State<HomePage> {
           likeNumber: '1.0M',
           commentNumber: '1234',
           bookmarkNumber: '12.5K',
+          shareNumber: '233',
         ),
       ],
     ));
