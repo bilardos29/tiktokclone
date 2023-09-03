@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ProfileWidget extends StatelessWidget {
+class ProfileIconWidget extends StatelessWidget {
   final String? imgProfile;
   final bool added;
 
-  const ProfileWidget({this.imgProfile, this.added = true, Key? key})
+  const ProfileIconWidget({this.imgProfile, this.added = true, Key? key})
       : super(key: key);
 
   @override

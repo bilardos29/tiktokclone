@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktokcloneapp/screen/profile/profile_page.dart';
 
 import 'home/home_page.dart';
 
@@ -17,7 +18,7 @@ class _MainPageState extends State<MainPage> {
     Center(child: Text('Search')),
     Center(child: Text('Add')),
     Center(child: Text('Inbox')),
-    Center(child: Text('Profile')),
+    ProfilePage(),
   ];
 
   void navigationBar(int index) {
