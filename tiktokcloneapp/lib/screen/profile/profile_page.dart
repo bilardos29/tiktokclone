@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiktokcloneapp/screen/profile/views/likes_widget.dart';
-import 'package:tiktokcloneapp/screen/profile/views/profile_widget.dart';
 
+import '../../widgets/profile_frame_widget.dart';
 import 'views/profile_tab.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -28,8 +28,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(height: 8),
-                        ProfileWidget(
-                            initialName: 'B', username: '@userBilardo'),
+                        ProfileFrameWidget(
+                            initialName: 'B', username: '@userBilardo', screen: PositionEnum.profile),
                         SizedBox(height: 20),
                         LikesWidget(),
                         SizedBox(height: 8),

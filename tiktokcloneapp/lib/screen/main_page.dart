@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tiktokcloneapp/screen/profile/profile_page.dart';
 
 import 'home/home_page.dart';
+import 'inbox/inbox_page.dart';
+import 'profile/profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -15,9 +16,9 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> listWidget = const [
     HomePage(),
-    Center(child: Text('Search')),
+    Center(child: Text('Shop')),
     Center(child: Text('Add')),
-    Center(child: Text('Inbox')),
+    InboxPage(),
     ProfilePage(),
   ];
 

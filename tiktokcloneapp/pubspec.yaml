@@ -65,6 +65,7 @@ flutter:
     - images/profile_sample.png
     - images/ic_add.png
     - images/ic_add2.png
+    - images/ic_live.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

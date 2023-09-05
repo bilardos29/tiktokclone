@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tiktokcloneapp/screen/home/view/profile_icon_widget.dart';
+import 'package:tiktokcloneapp/widgets/profile_frame_widget.dart';
 
 import 'button_post_widget.dart';
 
@@ -65,8 +65,10 @@ class PostView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const ProfileIconWidget(
-                  imgProfile: 'profile_sample.png',
+                const ProfileFrameWidget(
+                  image: 'profile_sample.png',
+                  size: 40,
+                  enums: ProfileEnum.addCenter,
                 ),
                 const SizedBox(height: 12),
                 ButtonPostWidget(
