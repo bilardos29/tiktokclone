@@ -26,7 +26,7 @@ class PostView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black45,
+      color: Colors.grey[600],
       child: Stack(
         children: [
           //Post Video
