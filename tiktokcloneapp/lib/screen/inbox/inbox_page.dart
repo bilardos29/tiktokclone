@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import '../../widgets/profile_frame_widget.dart';
+import 'views/notification_widget.dart';
 
 class InboxPage extends StatefulWidget {
   const InboxPage({Key? key}) : super(key: key);
@@ -22,10 +23,11 @@ class _InboxPageState extends State<InboxPage> {
         child: ListView(
           children: [
             //List Profile live
-            SizedBox(
+            Container(
                 height: 120,
+                margin: const EdgeInsets.only(bottom: 4),
                 child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 3,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
@@ -39,8 +41,52 @@ class _InboxPageState extends State<InboxPage> {
                         ));
                   },
                 )),
-
-
+            const Divider(height: 1),
+            const NotificationWidget(
+              username: 'Pengikut Baru',
+              initial: 'PB',
+              note: 'Savira Dwika mulai mengikutimu',
+              enums: ActionEnum.arrow,
+            ),
+            NotificationWidget(
+              username: 'Aktifitas',
+              initial: 'SD',
+              note: 'Savira Dwika mulai mengikutimu',
+              enums: ActionEnum.arrow,
+            ),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  return const NotificationWidget(
+                    username: 'Savira Dwika',
+                    initial: 'SD',
+                    note: 'Ucapkan salam kepada Savira Dwika',
+                    enums: ActionEnum.hello,
+                  );
+                }),
+            Container(
+                padding: const EdgeInsets.only(left: 12),
+                child: Row(
+                  children: [
+                    const Text('Saran akun',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(width: 4),
+                    Icon(
+                      Icons.info_outline,
+                      size: 14,
+                      color: Colors.grey[700],
+                    )
+                  ],
+                )),
+            ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  return const NotificationWidget(initial: 'BS', username: 'Bilardo', note: 'Dari kontak Anda');
+                })
             //List Inbox
             //List contact advise
           ],
