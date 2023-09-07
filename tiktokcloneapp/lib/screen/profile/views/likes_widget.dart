@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/function_utils.dart';
+import '../../sample/view.dart';
 import 'button_profile_widget.dart';
 
 class LikesWidget extends StatelessWidget {
@@ -17,7 +19,7 @@ class LikesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 36),
+      padding: const EdgeInsets.symmetric(horizontal: 36),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -26,15 +28,20 @@ class LikesWidget extends StatelessWidget {
             children: [
               viewing('58', 'Mengikuti'),
               viewing('12', 'Pengikut'),
-              viewing('112', 'Suka'),
+              InkWell(onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SamplePage()));
+              }, child: viewing('112', 'Suka')),
             ],
           ),
-          SizedBox(height: 8),
+          Funcs.spaces(8),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ButtonProfileWidget(buttonText: 'Edit profil', onClick: () {}),
-              const SizedBox(width: 12),
+              Funcs.dividers(12),
               ButtonProfileWidget(onClick: () {}, buttonText: 'Tambahkan teman')
             ],
           )
@@ -46,15 +53,12 @@ class LikesWidget extends StatelessWidget {
   Widget viewing(String val, String label) {
     return Column(
       children: [
-        Text(
-          val,
-          style: const TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
-        ),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12, color: Colors.black),
-        )
+        Text(val,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Colors.black)),
+        Text(label, style: const TextStyle(fontSize: 12, color: Colors.black))
       ],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import '../../utils/function_utils.dart';
 import '../../widgets/profile_frame_widget.dart';
 import 'views/notification_widget.dart';
 
@@ -16,7 +17,7 @@ class _InboxPageState extends State<InboxPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inbox'),
+        title: const Text('Inbox'),
         centerTitle: true,
       ),
       body: Container(
@@ -48,7 +49,7 @@ class _InboxPageState extends State<InboxPage> {
               note: 'Savira Dwika mulai mengikutimu',
               enums: ActionEnum.arrow,
             ),
-            NotificationWidget(
+            const NotificationWidget(
               username: 'Aktifitas',
               initial: 'SD',
               note: 'Savira Dwika mulai mengikutimu',
@@ -72,7 +73,7 @@ class _InboxPageState extends State<InboxPage> {
                   children: [
                     const Text('Saran akun',
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                    const SizedBox(width: 4),
+                    Funcs.spaces(4),
                     Icon(
                       Icons.info_outline,
                       size: 14,

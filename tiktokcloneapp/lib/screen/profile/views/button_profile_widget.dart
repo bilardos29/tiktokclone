@@ -14,11 +14,11 @@ class ButtonProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      minWidth: MediaQuery.of(context).size.width / 4,
+        minWidth: MediaQuery.of(context).size.width / 4,
         color: ColorsUtil.lightGrey,
         elevation: 4,
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         onPressed: () {},
-        child: Text(buttonText, style: TextStyle(color: Colors.black, ),));
+        child: Text(buttonText, style: const TextStyle(color: Colors.black)));
   }
 }

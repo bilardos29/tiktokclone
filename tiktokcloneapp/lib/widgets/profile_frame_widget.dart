@@ -78,7 +78,7 @@ class ProfileFrameWidget extends StatelessWidget {
                     width: 2,
                     color: isLive ? Colors.redAccent : Colors.transparent),
               ),
-              child: Functions.isValueNull(initialName)
+              child: Funcs.isValueNull(initialName)
                   ? Container(
                       width: size,
                       height: size,
@@ -138,8 +138,8 @@ class ProfileFrameWidget extends StatelessWidget {
                       ),
           ],
         ),
-        SizedBox(height: Functions.isValueNull(username) ? 5 : 0),
-        Functions.isValueNull(username)
+        SizedBox(height: Funcs.isValueNull(username) ? 5 : 0),
+        Funcs.isValueNull(username)
             ? const SizedBox()
             : SizedBox(
                 width: isProfile ? double.infinity : size,

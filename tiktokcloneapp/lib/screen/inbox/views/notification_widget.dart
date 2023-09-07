@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tiktokcloneapp/widgets/profile_frame_widget.dart';
 
+import '../../../utils/function_utils.dart';
+
 enum ActionEnum { arrow, notification, hello, follow }
 
 class NotificationWidget extends StatelessWidget {
@@ -54,10 +56,7 @@ class NotificationWidget extends StatelessWidget {
                       Text(username!,
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 16)),
-                      Text(
-                        note!,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      Text(note!, overflow: TextOverflow.ellipsis),
                     ],
                   ),
                 ),
@@ -83,11 +82,9 @@ class NotificationWidget extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(16),
                                     color: Colors.red),
                                 child: totalNotif! > 1
-                                    ? const Text(
-                                        '2',
+                                    ? const Text('2',
                                         style: TextStyle(
-                                            color: Colors.white, fontSize: 12),
-                                      )
+                                            color: Colors.white, fontSize: 12))
                                     : const SizedBox(),
                               ),
                             ],
@@ -110,13 +107,13 @@ class NotificationWidget extends StatelessWidget {
                             : Row(children: [
                                 FilledButton(
                                   onPressed: () {},
-                                  child: const Text('Ikuti'),
                                   style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateColor.resolveWith(
                                               (states) => Colors.red)),
+                                  child: const Text('Ikuti'),
                                 ),
-                                const SizedBox(width: 8),
+                                Funcs.spaces(8),
                                 const Icon(Icons.close)
                               ]),
               ]),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiktokcloneapp/screen/profile/views/likes_widget.dart';
+import 'package:tiktokcloneapp/screen/sample/view.dart';
+import 'package:tiktokcloneapp/utils/function_utils.dart';
 
 import '../../widgets/profile_frame_widget.dart';
 import 'views/profile_tab.dart';
@@ -18,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
       length: 5,
       child: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
-          const SliverAppBar(
+          SliverAppBar(
               expandedHeight: 330,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
@@ -27,20 +29,24 @@ class _ProfilePageState extends State<ProfilePage> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(height: 8),
-                        ProfileFrameWidget(
-                            initialName: 'B', username: '@userBilardo', screen: PositionEnum.profile),
-                        SizedBox(height: 20),
-                        LikesWidget(),
-                        SizedBox(height: 8),
-                        Text('bio here'),
-                        SizedBox(height: 16),
+                        Funcs.spaces(8),
+                        const ProfileFrameWidget(
+                            initialName: 'B',
+                            username: '@userBilardo',
+                            screen: PositionEnum.profile),
+                        Funcs.spaces(20),
+                        const LikesWidget(),
+                        Funcs.spaces(8),
+                        TextButton(
+                            onPressed: () {},
+                            child: const Text('link profile here')),
+                        Funcs.spaces(16),
                       ],
                     ),
                   ],
                 ),
               ),
-              bottom: TabBar(tabs: [
+              bottom: const TabBar(tabs: [
                 Tab(icon: Icon(Icons.grid_3x3, color: Colors.black)),
                 Tab(icon: Icon(Icons.lock, color: Colors.black)),
                 Tab(icon: Icon(Icons.favorite_border, color: Colors.black)),
@@ -50,7 +56,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 Tab(icon: Icon(Icons.favorite_border, color: Colors.black)),
               ]))
         ],
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             ProfileTabView(),
             ProfileTabView(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tiktokcloneapp/widgets/profile_frame_widget.dart';
 
+import '../../../utils/function_utils.dart';
 import 'button_post_widget.dart';
 
 class PostView extends StatelessWidget {
@@ -33,8 +34,8 @@ class PostView extends StatelessWidget {
 
           //Caption username and description
           Container(
-            alignment: Alignment(-1, 1),
-            padding: EdgeInsets.all(20),
+            alignment: const Alignment(-1, 1),
+            padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,22 +71,22 @@ class PostView extends StatelessWidget {
                   size: 40,
                   enums: ProfileEnum.addCenter,
                 ),
-                const SizedBox(height: 12),
+                Funcs.spaces(12),
                 ButtonPostWidget(
                   icons: Icons.favorite,
                   number: likeNumber,
                 ),
-                const SizedBox(height: 12),
+                Funcs.spaces(12),
                 ButtonPostWidget(
                   imgIcon: 'ic_comment.png',
                   number: commentNumber,
                 ),
-                const SizedBox(height: 12),
+                Funcs.spaces(12),
                 ButtonPostWidget(
                   icons: Icons.bookmark,
                   number: bookmarkNumber,
                 ),
-                const SizedBox(height: 12),
+                Funcs.spaces(12),
                 ButtonPostWidget(
                   imgIcon: 'ic_share.png',
                   number: shareNumber,
